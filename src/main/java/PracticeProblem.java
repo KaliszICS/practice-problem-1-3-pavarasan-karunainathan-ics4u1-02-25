@@ -11,12 +11,15 @@ public class PracticeProblem {
 			while((c = (char)inputStream.read()) != (char)-1){
 				str += c;
 			}
-			str = str.stripTrailing(); // ????
 			inputStream.close();
 			return str;
 		}catch(IOException e){
-			if(inputStream != null){
-				inputStream.close();
+			try{
+				if(inputStream != null){
+					inputStream.close();
+				}
+			}catch(IOException e1){
+				System.out.println(e1);
 			}
 			System.out.println(e);
 		}
@@ -33,15 +36,18 @@ public class PracticeProblem {
 				str += c;
 			}
 			inputStream.close();
-			str = str.stripTrailing(); // ????
 			String reversed = "";
 			for(int i = str.length()-1; i > -1; --i){
 				reversed += str.charAt(i);
 			}
 			return reversed;
 		}catch(IOException e){
-			if(inputStream != null){
-				inputStream.close();
+			try{
+				if(inputStream != null){
+					inputStream.close();
+				}
+			}catch(IOException e1){
+				System.out.println(e1);
 			}
 			System.out.println(e);
 		}
