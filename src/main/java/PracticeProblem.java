@@ -15,6 +15,9 @@ public class PracticeProblem {
 			inputStream.close();
 			return str;
 		}catch(IOException e){
+			if(inputStream != null){
+				inputStream.close();
+			}
 			System.out.println(e);
 		}
 		return "";
@@ -37,6 +40,9 @@ public class PracticeProblem {
 			}
 			return reversed;
 		}catch(IOException e){
+			if(inputStream != null){
+				inputStream.close();
+			}
 			System.out.println(e);
 		}
 		return "";
